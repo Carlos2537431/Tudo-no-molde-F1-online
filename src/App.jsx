@@ -176,6 +176,25 @@ function Timeline() {
 }
 
 // ====================================================================
+// Imagem com fallback de nomes/formatos (lida com case e extensão)
+// ====================================================================
+function SafeImg({ srcList, alt, className }) {
+  const [index, setIndex] = useState(0);
+  const tryNext = () => {
+    setIndex((prev) => (prev + 1 < srcList.length ? prev + 1 : prev));
+  };
+  return (
+    <img
+      src={srcList[index]}
+      alt={alt}
+      className={className}
+      onError={tryNext}
+      loading="lazy"
+    />
+  );
+}
+
+// ====================================================================
 // Component Section
 // ====================================================================
 function Section({ title, text, extra, images }) {
@@ -227,14 +246,15 @@ function Section({ title, text, extra, images }) {
 // Depoimentos (carrossel)
 // ====================================================================
 function Testimonials() {
-  const testimonials = [
-    <img src="/Depoimento1.jpeg" alt="Depoimento 1" className="testimonial-image" />,
-    <img src="/Depoimento2.jpeg" alt="Depoimento 2" className="testimonial-image" />,
-    <img src="/Depoimento3.jpeg" alt="Depoimento 3" className="testimonial-image" />,
-    <img src="/Depoimento4.jpeg" alt="Depoimento 4" className="testimonial-image" />,
-    <img src="/Depoimento5.jpeg" alt="Depoimento 5" className="testimonial-image" />,
-    <img src="/Depoimento6.jpeg" alt="Depoimento 6" className="testimonial-image" />,
+  const variants = (n) => [
+    `/Depoimento${n}.jpeg`,
+    `/depoimento${n}.jpeg`,
+    `/Depoimento${n}.jpg`,
+    `/depoimento${n}.jpg`,
   ];
+  const testimonials = [1, 2, 3, 4, 5, 6].map((n) => (
+    <SafeImg key={n} srcList={variants(n)} alt={`Depoimento ${n}`} className="testimonial-image" />
+  ));
 
   const [index, setIndex] = useState(0);
 
@@ -411,7 +431,7 @@ function App() {
           </div>
 
           <div className="image-container">
-            <img src="/ingrid.jpeg" alt="Instrutora" className="main-image" />
+            <SafeImg srcList={["/ingrid.jpeg", "/Ingrid.jpeg", "/ingrid.jpg", "/Ingrid.jpg"]} alt="Instrutora" className="main-image" />
             
           </div>
         </div>
@@ -432,7 +452,7 @@ function App() {
 
             <div className="bio-wrapper">
               <div className="bio-image-container"> 
-                <img src="/ingrid3.png" className="bio-main-img" alt="Ingrid Pena" /> 
+                <SafeImg srcList={["/ingrid3.png", "/Ingrid3.png", "/ingrid3.jpg", "/Ingrid3.jpg"]} className="bio-main-img" alt="Ingrid Pena" /> 
               </div>
 
               <div className="bio-text">
