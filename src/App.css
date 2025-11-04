@@ -1105,6 +1105,8 @@ img, video { max-width: 100%; height: auto; }
   border-bottom: 1px solid rgba(255,255,255,0.08);
   overflow: hidden; /* para o overlay de listras */
   position: relative;
+  margin: 0; /* ocupa toda a largura do viewport */
+  width: 100%;
 }
 
 /* Compacta o contador quando estiver fixo */
@@ -1151,4 +1153,23 @@ img, video { max-width: 100%; height: auto; }
 .with-fixed-countdown { margin-top: 56px; }
 @media (max-width: 768px) {
   .with-fixed-countdown { margin-top: 48px; }
+}
+
+/* Mobile: fazer o contador realmente ocupar a largura total com safe-area */
+@media (max-width: 700px) {
+  .countdown-fixed { left: 0; right: 0; }
+  .countdown-fixed .countdown-container {
+    width: 100%;
+    margin: 0;
+    padding-left: max(8px, env(safe-area-inset-left));
+    padding-right: max(8px, env(safe-area-inset-right));
+    box-sizing: border-box;
+  }
+}
+
+/* Telas muito estreitas: evitar que label + caixas estourem a largura */
+@media (max-width: 360px) {
+  .countdown-fixed .countdown-inline-label { display: none; }
+  .countdown-fixed .countdown-box { min-width: 40px; padding: 0.22rem 0.35rem; }
+  .countdown-fixed .countdown-number, .countdown-fixed .countdown-separator { font-size: 1rem; }
 }
