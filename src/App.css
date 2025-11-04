@@ -144,8 +144,8 @@ img, video { max-width: 100%; height: auto; }
 .section-container {
   max-width: 1000px;
   width: 100%;
-  margin-left: 100px;
-  padding: 2rem 0;
+  margin: 0 auto; /* centraliza em desktop também, evitando deslocamento */
+  padding: 2rem 1rem; /* inclui gutters laterais por padrão */
   justify-content: center;
   text-align: center;
   opacity: 0; 
@@ -706,11 +706,7 @@ img, video { max-width: 100%; height: auto; }
   }
 
   /* Centraliza e remove deslocamento lateral nas sections */
-  .section-container {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1.5rem 0;
-  }
+  .section-container { padding: 1.5rem 1rem; }
 
   .section-title {
     font-size: 2rem;
@@ -765,6 +761,7 @@ img, video { max-width: 100%; height: auto; }
   .price {
     font-size: 1.6rem;
     padding: 0.85rem 1rem;
+    white-space: normal; /* permite quebrar para caber na tela */
   }
   .price span {
     font-size: 2.8rem;
@@ -864,6 +861,30 @@ img, video { max-width: 100%; height: auto; }
   .timeline-dot {
     left: 20px; /* Alinha os dots da borda com a linha */
   }
+}
+
+/* Bio imagem: evitar overflow em telas pequenas */
+@media (max-width: 768px) {
+  .bio-image-container {
+    width: min(100%, 260px);
+    height: auto;
+  }
+}
+@media (max-width: 480px) {
+  .bio-image-container {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+  }
+}
+
+/* Quebra de palavras longas para evitar transbordo */
+.description,
+.section-text p,
+.offer-note,
+.faq-answer p {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* ====================================================================
