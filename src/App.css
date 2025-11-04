@@ -17,6 +17,10 @@ body, html {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
 }
 
+/* Resets úteis para evitar overflow e melhorar o layout responsivo */
+*, *::before, *::after { box-sizing: border-box; }
+img, video { max-width: 100%; height: auto; }
+
 /* ==== Layout principal (Main Hero Section) ==== */
 .app-container {
   display: flex;
@@ -703,8 +707,8 @@ body, html {
 
   /* Centraliza e remove deslocamento lateral nas sections */
   .section-container {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
     padding: 1.5rem 0;
   }
 
@@ -730,6 +734,12 @@ body, html {
     font-size: 1.2rem;
     padding: 0.25rem 0.5rem;
   }
+
+  /* Evitar possíveis sobras laterais da timeline no mobile */
+  .timeline-wrapper { overflow-x: hidden; }
+
+  /* Reservar espaço para a CTA fixa no rodapé em mobile */
+  .app-container { padding-bottom: 6.5rem; }
 }
 
 /* Ajustes para telas muito pequenas (<= 480px) */
@@ -765,23 +775,27 @@ body, html {
 .floating-btn {
   display: none;
   position: fixed;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 12px;
+  left: 1rem;
+  right: 1rem;
+  transform: none;
   background: #00c851; 
   color: white;
   font-weight: 700;
-  padding: 1rem 2.5rem;
-  border-radius: 40px;
+  padding: 0.9rem 1.25rem;
+  border-radius: 14px;
   z-index: 999;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 20px rgba(0, 200, 81, 0.9);
+  font-size: 1.05rem;
+  box-shadow: 0 8px 28px rgba(0, 200, 81, 0.55);
   /* Para suportar ícone à esquerda */
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   gap: 0.6rem;
+  /* Safe area no iOS */
+  padding-bottom: calc(0.9rem + env(safe-area-inset-bottom, 0px));
 }
 
 @media(max-width: 700px) {

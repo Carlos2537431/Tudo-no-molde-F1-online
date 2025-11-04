@@ -515,8 +515,17 @@ Depois de um ano e meio de estudos e testes, o Tudo no Molde F1 se tornou uma re
           </section>
         </FadeInOnScroll>
       </div>
-
-
+      {/* CTA flutuante (mobile) - aparece em telas pequenas */}
+      <a
+        href="https://wa.me/5519990152578"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="floating-btn"
+        aria-label="Falar no WhatsApp"
+      >
+        <img src="/zap.png" alt="" className="button-icon" aria-hidden="true" />
+        Falar no WhatsApp
+      </a>
     </>
   );
 }
