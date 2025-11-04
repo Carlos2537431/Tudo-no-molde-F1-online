@@ -932,6 +932,7 @@ img, video { max-width: 100%; height: auto; }
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
+  width: 100%; /* garante que o conteúdo respeite a largura do viewport */
 }
 
 /* Label inline usada no modo fixo */
@@ -1126,6 +1127,11 @@ img, video { max-width: 100%; height: auto; }
   letter-spacing: 0.4px;
   margin-right: 0.5rem;
   white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1 1 auto; /* deixa o label encolher e usar reticências */
+  min-width: 0;
 }
 
 /* Overlay listrado semitransparente na faixa fixa */
@@ -1165,10 +1171,13 @@ img, video { max-width: 100%; height: auto; }
     padding-right: max(8px, env(safe-area-inset-right));
     box-sizing: border-box;
   }
+  /* Evita que o label force overflow em larguras medianas */
+  .countdown-fixed .countdown-timer { justify-content: space-between; }
+  .countdown-fixed .countdown-inline-label { max-width: 60%; }
 }
 
 /* Telas muito estreitas: evitar que label + caixas estourem a largura */
-@media (max-width: 360px) {
+@media (max-width: 400px) {
   .countdown-fixed .countdown-inline-label { display: none; }
   .countdown-fixed .countdown-box { min-width: 40px; padding: 0.22rem 0.35rem; }
   .countdown-fixed .countdown-number, .countdown-fixed .countdown-separator { font-size: 1rem; }
