@@ -431,7 +431,7 @@ function App() {
           </div>
 
           <div className="image-container">
-            <SafeImg srcList={["/ingrid.jpeg", "/Ingrid.jpeg", "/ingrid.jpg", "/Ingrid.jpg"]} alt="Instrutora" className="main-image" />
+            <SafeImg srcList={["/Ingrid.jpeg", "/ingrid.jpeg", "/Ingrid.jpg", "/ingrid.jpg"]} alt="Instrutora" className="main-image" />
             
           </div>
         </div>
