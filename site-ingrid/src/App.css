@@ -1,0 +1,1047 @@
+/* ==== Cores da Paleta ====
+   #000000: Fundo Principal (Preto)
+   #84d33a: Verde Limão (Destaque Principal)
+   #00c851: Verde Brilhante (CTA e Borda)
+   #ca7322: Laranja Escuro (Cor de Suporte)
+*/
+
+/* ==== Configurações gerais ==== */
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #000000; 
+  color: #fff;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+}
+
+/* ==== Layout principal (Main Hero Section) ==== */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1.5rem;
+  gap: 6rem;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .content-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* ==== Texto do Header ==== */
+.text-container {
+  flex: 1;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .text-container {
+    text-align: left;
+  }
+}
+
+.main-title {
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: #84d33a; 
+  margin: 0;
+  font-family: "Manrope", "Inter", system-ui, sans-serif;
+  text-shadow: 0 0 8px rgba(132, 211, 58, 0.35); 
+  line-height: 1.1;
+}
+
+.subtitle {
+  color: #84d33a; 
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  font-family: "Manrope", "Inter", system-ui, sans-serif; 
+}
+
+.description,
+.extra-text {
+  margin-top: 1.2rem;
+  line-height: 1.7; 
+  color: #f1f1f1;
+  font-size: 1.15rem; 
+  max-width: 650px;
+}
+
+/* Botão CTA (Call to Action) */
+.button {
+  margin-top: 2.5rem;
+  background-color: #00c851; 
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  padding: 1.1rem 3rem; 
+  font-size: 1.2rem;
+  cursor: pointer;
+  white-space: nowrap; /* mantém tudo na mesma linha */
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 200, 81, 0.7); 
+  text-transform: uppercase;
+  letter-spacing: 1px; 
+  /* Para suportar ícone à esquerda */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.button:hover {
+  background-color: #009e3a;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 200, 81, 0.9);
+}
+
+/* ==== Imagem principal ==== */
+.image-container {
+  flex: 0 0 450px;
+  position: relative;
+  text-align: center;
+}
+
+.main-image {
+  border-radius: 20px;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8); 
+  border: 4px solid #84d33a; 
+}
+
+.decorative {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  font-size: 4rem;
+  color: #84d33a;
+  z-index: 10;
+  opacity: 0.6;
+}
+
+/* ==== Seção adicional (Cards) ==== */
+.section-container {
+  max-width: 1000px;
+  width: 100%;
+  margin-left: 100px;
+  padding: 2rem 0;
+  justify-content: center;
+  text-align: center;
+  opacity: 0; 
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.section-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: "Manrope", "Inter", system-ui, sans-serif;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
+}
+
+.section-title span {
+  color: #00c851; 
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.section-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #101010; 
+  border-radius: 20px;
+  padding: 2.5rem; 
+  color: #fff; 
+  border: 1px solid rgba(132, 211, 58, 0.2); 
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); 
+  gap: 3rem;
+  text-align: center;
+}
+
+.section-text {
+  padding: 0 0.5rem;
+}
+
+.section-text p {
+    font-size: 1.15rem; 
+    line-height: 1.7;
+}
+
+.section-extra {
+  font-weight: 600;
+  color: #84d33a; 
+  margin-top: 1rem;
+}
+
+/* ===== Grupo de imagens lado a lado ===== */
+.image-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; 
+}
+
+.section-image {
+  width: 100%;
+  max-width: 200px; 
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+  border: 2px solid #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(132, 211, 58, 0.7); 
+}
+
+/* ================== TIMELINE SECTION ================== */
+.timeline-wrapper {
+  max-width: 900px;
+  width: 100%;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.timeline-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 4rem;
+  font-family: "Manrope", "Inter", system-ui, sans-serif;
+}
+
+.timeline-title span {
+  color: #84d33a; /* Verde Limão */
+}
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Linha da Timeline */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 6px; /* mais encorpada */
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.06), #262626 10%, #262626 90%, rgba(255,255,255,0.06));
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04), 0 0 0 1px rgba(0,0,0,0.6);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Removido o segmento fixo vermelho; a cor muda apenas no progresso */
+.timeline-line::after { content: none; }
+
+/* Linha de Progresso (preenchimento da linha) */
+.timeline-progress {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 6px; /* acompanha a base */
+  /* Variavel CSS controlada pelo React */
+  height: var(--line-progress, 0%); 
+  /* Linha de progresso toda verde (sem destaque de bônus) */
+  background: #00c851;
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(0, 200, 81, 0.35);
+  transform: translateX(-50%);
+  z-index: 2;
+  transition: height 0.3s ease-out; /* Suaviza a animação de preenchimento */
+}
+
+/* Item da Timeline */
+.timeline-item {
+  position: relative;
+  margin-bottom: 4rem; /* Maior espaçamento */
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: #101010;
+  border: 1px solid rgba(132, 211, 58, 0.2);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  z-index: 3;
+}
+
+.timeline-item h3 {
+  color: #84d33a; /* Verde Limão */
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.timeline-item p {
+  font-size: 1.1rem;
+}
+
+/* VARIANTE: Item BÔNUS em vermelho */
+/* Bônus com aparência padrão (verde) */
+.timeline-item.bonus {
+  border: 1px solid rgba(132, 211, 58, 0.2);
+  background: #101010;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.timeline-item.bonus h3 {
+  color: #84d33a;
+  text-shadow: none;
+}
+
+.timeline-item.bonus.left { border-left-color: #00c851; }
+.timeline-item.bonus.right { border-right-color: #00c851; }
+
+.timeline-item.bonus::after {
+  background-color: #00c851;
+  box-shadow: 0 0 0 3px #84d33a;
+}
+
+/* Alinhamento dos Itens */
+.timeline-item.left {
+  margin-right: auto;
+  left: 0;
+  text-align: right;
+  border-left: 5px solid #00c851;
+  border-radius: 12px 0 0 12px; 
+}
+
+.timeline-item.right {
+  margin-left: auto;
+  right: 0;
+  text-align: left;
+  border-right: 5px solid #00c851;
+  border-radius: 0 12px 12px 0; 
+}
+
+/* Conecta o item à linha (o ponto de impacto) */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #00c851;
+  border: 3px solid #000000;
+  box-shadow: 0 0 0 3px #84d33a;
+  z-index: 4;
+}
+
+.timeline-item.left::after {
+  right: -25px;
+}
+
+.timeline-item.right::after {
+  left: -25px;
+}
+
+/* Pontos no início e fim da linha */
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #84d33a;
+    border: 2px solid #000000;
+    box-shadow: 0 0 0 2px #00c851;
+    z-index: 5;
+}
+
+.timeline-dot.top {
+    top: -6px;
+}
+
+.timeline-dot.bottom {
+    bottom: -6px;
+    background-color: #00c851;
+}
+
+/* ================== BIO SECTION (SOBRE A INSTRUTORA) ================== */
+.bio-section {
+  padding: 4rem 2rem;
+  color: white;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.bio-title {
+  text-align: center;
+  font-size: 2.8rem; 
+  font-weight: 800;
+  margin-bottom: 4rem; 
+  line-height: 1.3;
+  font-family: "Manrope", "Inter", system-ui, sans-serif;
+}
+
+.bio-title span {
+  color: #84d33a; 
+  font-weight: 800;
+}
+
+.bio-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+/* --- Container da Imagem principal da Bio --- */
+.bio-image-container {
+  position: relative;
+  width: 400px; 
+  height: 500px; 
+  border-radius: 25px; 
+  overflow: hidden; 
+  background: linear-gradient(to bottom, rgba(132, 211, 58, 0.1) 0%, rgba(0,0,0,0.8) 100%), #000;
+  border: 2px solid rgba(132, 211, 58, 0.4); 
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9), 0 0 40px rgba(132, 211, 58, 0.3);
+}
+
+.bio-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
+
+/* --- Texto da Bio --- */
+.bio-text {
+  max-width: 600px;
+  font-size: 1.25rem; 
+  line-height: 1.8;
+}
+
+.bio-text p {
+  margin-bottom: 1.8rem;
+}
+
+/* ===== GARANTIA (SEÇÃO DE ALTA CONVERSÃO) ===== */
+.guarantee {
+  text-align: center;
+  background: linear-gradient(145deg, #101010 0%, #000000 100%); 
+  border: 3px solid #00c851; 
+  border-radius: 25px;
+  padding: 4rem 2rem;
+  color: white;
+  max-width: 800px; 
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 0 40px rgba(0, 200, 81, 0.3), 0 10px 30px rgba(0, 0, 0, 0.8); 
+}
+
+.guarantee h2 {
+    font-size: 2.2rem; 
+    color: #84d33a; 
+    font-weight: 800;
+    margin-top: 0.5rem;
+}
+
+.guarantee .seal {
+  width: 100px; 
+  margin-bottom: 1rem;
+}
+
+/* ===== DEPOIMENTOS ===== */
+.testimonials {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: transparent;
+  color: white;
+  max-width: 100%;
+}
+
+.testimonial-box {
+  font-size: 1.5rem;
+  font-style: normal; /* imagens não precisam de itálico */
+  margin: 2.5rem auto;
+  max-width: 820px;
+  padding: 2.5rem 2rem; 
+  background: linear-gradient(145deg, #101010 0%, #0a0a0a 100%);
+  border-radius: 18px;
+  border: 1px solid rgba(132, 211, 58, 0.18);
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.7), /* sombra externa */
+    inset 0 0 18px rgba(0, 200, 81, 0.15); /* leve brilho interno */
+  line-height: 1.5;
+  display: flex; /* centraliza a imagem */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Imagens dos depoimentos seguindo o padrão de cards do site */
+.testimonial-image {
+  width: clamp(260px, 28vw, 340px); /* largura consistente em desktop, responsiva */
+  aspect-ratio: 3 / 4; /* todas no mesmo tamanho/proporção */
+  height: auto;
+  border-radius: 14px;
+  object-fit: cover;
+  /* Borda profissional com anel e brilho sutil */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 0 0 2px rgba(0, 0, 0, 0.85), /* borda interna escura para recorte */
+    0 0 0 1px rgba(132, 211, 58, 0.35),  /* anel verde fino */
+    0 12px 28px rgba(0, 0, 0, 0.6),      /* sombra externa */
+    0 0 20px rgba(0, 200, 81, 0.22);     /* brilho verde suave */
+}
+
+@media (max-width: 768px) {
+  .testimonial-image {
+    width: clamp(220px, 70vw, 260px);
+  }
+}
+
+/* ===== OFERTA (CLÍMAX) ===== */
+.offer {
+  background: transparent;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: white;
+  max-width: 100%;
+}
+
+.offer-title {
+    font-size: 2.5rem; 
+    font-weight: 700;
+    color: #f1f1f1;
+    margin-bottom: 0.5rem;
+  font-family: "Manrope", "Inter", system-ui, sans-serif;
+}
+
+/* Badge de oferta limitada */
+.offer-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #dd0808, #fc0303);
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 8px 24px rgba(202, 115, 34, 0.35);
+  margin-bottom: 0.75rem;
+}
+
+/* Wrapper para preço antigo + atual lado a lado */
+.price-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Exibir o preço antigo acima do novo preço */
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.price-old {
+  font-weight: 700;
+ padding: 1.5rem 2rem;
+  font-size: 2.5rem;
+  color: rgba(255, 0, 0, 0.7);
+  text-decoration: line-through;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: #101010;
+  border-radius: 15px;
+  padding: 1.5rem 2rem;
+  display: inline-block;
+  border: 2px solid #00c851;
+  box-shadow: 0 0 20px rgba(0, 200, 81, 0.5);
+  margin-bottom: 1.5rem;
+  white-space: nowrap;
+}
+
+.price span {
+  font-size: 5rem; 
+  color: #84d33a; 
+  font-weight: 900;
+  display: inline;
+  text-shadow: 0 0 15px rgba(132, 211, 58, 0.8); 
+}
+
+.offer-btn {
+    margin-top: 3rem;
+}
+
+.offer-note {
+  margin-top: 0.25rem;
+  color: rgba(255,255,255,0.9);
+}
+
+/* Parcelamento (discreto, alinhado à paleta e aos cards) */
+.price-installments {
+  margin-top: 0.25rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #101010 0%, #0a0a0a 100%);
+  border: 1px solid rgba(132, 211, 58, 0.22);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45), inset 0 0 12px rgba(0, 200, 81, 0.12);
+}
+
+.price-installments span {
+  color: #84d33a;
+  font-weight: 800;
+  text-shadow: 0 0 10px rgba(132, 211, 58, 0.35);
+}
+
+@media (max-width: 768px) {
+  .price-installments {
+    font-size: 1rem;
+    padding: 0.5rem 0.9rem;
+  }
+}
+
+.final-button-container {
+    padding-bottom: 4rem;
+}
+
+/* ================== Fade Scroll Animation (Genérico) ================== */
+.fade-on-scroll {
+  opacity: 0;
+  transform: translateY(60px); 
+  transition: all 1.3s cubic-bezier(0.2, 0.8, 0.2, 1); 
+}
+
+.fade-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================== RESPONSIVO ================== */
+@media (max-width: 900px) {
+
+  .main-title {
+    font-size: 3rem;
+  }
+  
+  .bio-title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .bio-wrapper {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .bio-image-container { 
+    width: 300px;
+    height: 380px;
+  }
+
+  .bio-text {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  .section-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-card:nth-child(even) {
+    flex-direction: column;
+  }
+}
+
+/* BOTÃO FLUTUANTE MOBILE */
+.floating-btn {
+  display: none;
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00c851; 
+  color: white;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border-radius: 40px;
+  z-index: 999;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 20px rgba(0, 200, 81, 0.9);
+  /* Para suportar ícone à esquerda */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+@media(max-width: 700px) {
+  .floating-btn {
+    display: inline-flex;
+  }
+}
+
+/* Ícone genérico à esquerda dos botões */
+.button-icon {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+}
+
+/* Responsivo para a Timeline (muda para coluna única) */
+@media (max-width: 600px) {
+  .timeline-wrapper {
+    padding: 2rem 1rem;
+  }
+  
+  .timeline-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Move a linha para a esquerda no mobile mantendo o centro alinhado */
+  .timeline-line,
+  .timeline-progress {
+    left: 20px;
+  }
+
+
+  .timeline-item {
+    margin-left: 50px; /* Espaço para a linha */
+    max-width: none;
+    text-align: left;
+    /* Ajusta bordas para o novo alinhamento */
+    border-right: none;
+    border-left: 5px solid #00c851;
+    border-radius: 0 12px 12px 0;
+  }
+
+  /* Garante que o item bônus permaneça vermelho no mobile */
+  .timeline-item.bonus {
+    border-left-color: #ff4d4f;
+  }
+
+  /* Aplica o novo alinhamento de forma genérica para todos os itens no mobile */
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+    right: auto;
+    margin-right: 0;
+    margin-left: 50px;
+  }
+
+  /* Garante que o dot do conector fique alinhado à linha da esquerda */
+  .timeline-item::after {
+    left: -30px; 
+    right: auto;
+  }
+  
+  .timeline-dot {
+    left: 20px; /* Alinha os dots da borda com a linha */
+  }
+}
+
+/* ====================================================================
+   COUNTDOWN TIMER (15 MIN) - Mantendo paleta #000, #84d33a, #00c851, #ca7322
+   ==================================================================== */
+.countdown-container {
+  --cd-bg: linear-gradient(135deg, #84d33a 0%, #00c851 100%);
+  --cd-border: rgba(255, 255, 255, 0.18);
+  --cd-glow: rgba(0, 200, 81, 0.35);
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem 1.5rem 1.5rem;
+  background: var(--cd-bg);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--cd-glow), 0 0 0 2px rgba(0, 0, 0, 0.4) inset;
+  color: #fff;
+  position: relative;
+}
+
+.countdown-title {
+  margin: 0 0 1rem 0;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.countdown-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  border: 1px solid var(--cd-border);
+  color: #84d33a;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Label inline usada no modo fixo */
+.countdown-inline-label { display: none; }
+
+.countdown-box {
+  background: radial-gradient(120% 120% at 50% 0%, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0.55) 60%);
+  padding: 0.9rem 1.1rem;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 90px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: saturate(120%) blur(2px);
+  -webkit-backdrop-filter: saturate(120%) blur(2px);
+}
+
+.countdown-number {
+  font-size: 2.6rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  font-family: "Manrope", "Inter", system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  -moz-font-feature-settings: "tnum" 1;
+  -webkit-font-feature-settings: "tnum" 1;
+  font-feature-settings: "tnum" 1;
+}
+
+.countdown-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0.35rem;
+}
+
+.countdown-separator {
+  font-size: 2.4rem;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.countdown-expired {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-weight: 700;
+  color: #ca7322; /* Laranja da paleta para alerta */
+}
+
+@media (max-width: 768px) {
+  .countdown-container {
+    padding: 1rem 0.75rem 1.25rem 0.75rem;
+  }
+  .countdown-number {
+    font-size: 1.9rem;
+  }
+  .countdown-separator {
+    font-size: 1.9rem;
+  }
+  .countdown-box {
+    min-width: 78px;
+    padding: 0.75rem 0.9rem;
+  }
+}
+
+/* ====================================================================
+   FAQ (Acordeão) - Mantendo paleta
+   ==================================================================== */
+.faq-section {
+  padding: 4rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-container {
+  margin-top: 1.5rem;
+}
+
+.faq-item {
+  background: #101010;
+  border: 1px solid rgba(132, 211, 58, 0.25); /* #84d33a */
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.faq-item:hover {
+  border-color: #84d33a;
+  box-shadow: 0 6px 24px rgba(0, 200, 81, 0.25);
+}
+
+.faq-item.active {
+  border-color: #00c851;
+  box-shadow: 0 0 0 1px rgba(0, 200, 81, 0.35) inset, 0 10px 30px rgba(0, 200, 81, 0.25);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 1.2rem;
+}
+
+.faq-question h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #ffffff;
+}
+
+.faq-icon {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #84d33a;
+  min-width: 28px;
+  text-align: center;
+  transition: transform 0.25s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+  color: #00c851;
+}
+
+.faq-answer {
+  padding: 0 1.2rem 1.2rem 1.2rem;
+  animation: faqSlideDown 0.25s ease;
+}
+
+.faq-answer p {
+  margin: 0;
+  color: #f1f1f1;
+  line-height: 1.7;
+}
+
+@keyframes faqSlideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .faq-section { padding: 3rem 1rem; }
+  .faq-question h3 { font-size: 1rem; }
+  .faq-icon { font-size: 1.4rem; }
+}
+
+/* ====================================================================
+   COUNTDOWN FIXO NO TOPO + OFFSET DE PÁGINA
+   ==================================================================== */
+.countdown-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100; /* acima do conteúdo e do header */
+}
+
+.countdown-fixed .countdown-container {
+  border-radius: 0;
+  padding: 0.35rem 0.6rem; /* mais fino */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  /* Fundo com transparência mantendo a paleta verde */
+  background: linear-gradient(135deg, rgba(132, 211, 58, 0.75) 0%, rgba(0, 200, 81, 0.75) 100%) !important;
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden; /* para o overlay de listras */
+  position: relative;
+}
+
+/* Compacta o contador quando estiver fixo */
+.countdown-fixed .countdown-title { display: none; }
+.countdown-fixed .countdown-badge { display: none; }
+.countdown-fixed .countdown-label { display: none; } /* remove 'Minutos/Segundos' no fixo */
+.countdown-fixed .countdown-number { font-size: 1.1rem; }
+.countdown-fixed .countdown-separator { font-size: 1.1rem; }
+.countdown-fixed .countdown-box { min-width: 44px; padding: 0.25rem 0.4rem; }
+.countdown-fixed .countdown-timer { gap: 0.5rem; }
+.countdown-fixed .countdown-inline-label { 
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #ffffff;
+  opacity: 0.95;
+  letter-spacing: 0.4px;
+  margin-right: 0.5rem;
+  white-space: nowrap;
+}
+
+/* Overlay listrado semitransparente na faixa fixa */
+.countdown-fixed .countdown-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.12) 0 12px,
+      rgba(255, 255, 255, 0.0) 12px 24px
+    );
+  opacity: 0.35; /* controla a transparência das listras */
+  pointer-events: none;
+}
+
+/* Garante que o conteúdo fique acima das listras */
+.countdown-fixed .countdown-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Espaço no topo para não ficar encoberto pelo contador fixo */
+.with-fixed-countdown { margin-top: 56px; }
+@media (max-width: 768px) {
+  .with-fixed-countdown { margin-top: 48px; }
+}
