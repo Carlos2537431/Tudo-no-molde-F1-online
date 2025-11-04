@@ -228,12 +228,12 @@ function Section({ title, text, extra, images }) {
 // ====================================================================
 function Testimonials() {
   const testimonials = [
-    <img src="depoimento1.jpeg" alt="Depoimento 1" className="testimonial-image" />,
-    <img src="depoimento2.jpeg" alt="Depoimento 2" className="testimonial-image" />,
-    <img src="depoimento3.jpeg" alt="Depoimento 3" className="testimonial-image" />,
-    <img src="depoimento4.jpeg" alt="Depoimento 4" className="testimonial-image" />,
-    <img src="depoimento5.jpeg" alt="Depoimento 5" className="testimonial-image" />,
-    <img src="depoimento6.jpeg" alt="Depoimento 6" className="testimonial-image" />,
+    <img src="/Depoimento1.jpeg" alt="Depoimento 1" className="testimonial-image" />,
+    <img src="/Depoimento2.jpeg" alt="Depoimento 2" className="testimonial-image" />,
+    <img src="/Depoimento3.jpeg" alt="Depoimento 3" className="testimonial-image" />,
+    <img src="/Depoimento4.jpeg" alt="Depoimento 4" className="testimonial-image" />,
+    <img src="/Depoimento5.jpeg" alt="Depoimento 5" className="testimonial-image" />,
+    <img src="/Depoimento6.jpeg" alt="Depoimento 6" className="testimonial-image" />,
   ];
 
   const [index, setIndex] = useState(0);
