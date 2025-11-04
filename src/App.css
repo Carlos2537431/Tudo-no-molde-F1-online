@@ -1171,14 +1171,28 @@ img, video { max-width: 100%; height: auto; }
     padding-right: max(8px, env(safe-area-inset-right));
     box-sizing: border-box;
   }
-  /* Evita que o label force overflow em larguras medianas */
-  .countdown-fixed .countdown-timer { justify-content: space-between; }
-  .countdown-fixed .countdown-inline-label { max-width: 60%; }
+  /* Mobile: label acima e números centralizados, com pouco espaço entre eles */
+  .countdown-fixed .countdown-timer {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .countdown-fixed .countdown-inline-label {
+    display: block;
+    max-width: 100%;
+    flex: 1 1 100%;
+    text-align: center;
+    margin: 0 0 0.2rem 0;
+    white-space: normal; /* permite quebra em 2 linhas se necessário */
+    overflow: visible;
+    text-overflow: clip;
+  }
 }
 
 /* Telas muito estreitas: evitar que label + caixas estourem a largura */
 @media (max-width: 400px) {
-  .countdown-fixed .countdown-inline-label { display: none; }
+  /* Mantém o label visível, só reduz levemente para caber */
+  .countdown-fixed .countdown-inline-label { font-size: 0.8rem; }
   .countdown-fixed .countdown-box { min-width: 40px; padding: 0.22rem 0.35rem; }
   .countdown-fixed .countdown-number, .countdown-fixed .countdown-separator { font-size: 1rem; }
 }
