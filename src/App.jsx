@@ -228,12 +228,12 @@ function Section({ title, text, extra, images }) {
 // ====================================================================
 function Testimonials() {
   const testimonials = [
-    <img src="../public/depoimento1.jpeg" alt="Depoimento 1" className="testimonial-image" />,
-    <img src="../public/depoimento2.jpeg" alt="Depoimento 2" className="testimonial-image" />,
-    <img src="../public/depoimento3.jpeg" alt="Depoimento 3" className="testimonial-image" />,
-    <img src="../public/depoimento4.jpeg" alt="Depoimento 4" className="testimonial-image" />,
-    <img src="../public/depoimento5.jpeg" alt="Depoimento 5" className="testimonial-image" />,
-    <img src="../public/depoimento6.jpeg" alt="Depoimento 6" className="testimonial-image" />,
+    <img src="depoimento1.jpeg" alt="Depoimento 1" className="testimonial-image" />,
+    <img src="depoimento2.jpeg" alt="Depoimento 2" className="testimonial-image" />,
+    <img src="depoimento3.jpeg" alt="Depoimento 3" className="testimonial-image" />,
+    <img src="depoimento4.jpeg" alt="Depoimento 4" className="testimonial-image" />,
+    <img src="depoimento5.jpeg" alt="Depoimento 5" className="testimonial-image" />,
+    <img src="depoimento6.jpeg" alt="Depoimento 6" className="testimonial-image" />,
   ];
 
   const [index, setIndex] = useState(0);
@@ -367,25 +367,25 @@ function App() {
       title: "O que você encontrará no",
       text: "Estrututra com naturalidade ",
       extra: "Gravação profissional e foco no detalhe",
-      images: ["../public/unhas1.jpeg", "../public/unhas2.jpeg"],
+      images: ["unhas1.jpeg", "unhas2.jpeg"],
     },
     {
       title: "Aprenda a escolher o molde ideal",
       text: "Preparo correto da unha com encaixe perfeito do molde F1",
       extra: "Aprenda a quantidade correta de produto no molde F1",
-      images: ["../public/unhas3.jpeg", "../public/unhas4.jpeg"],
+      images: ["unhas3.jpeg", "unhas4.jpeg"],
     },
     {
       title: "Estrutura no molde F1",
       text: "Estrutura profissional com durabilidade e resistência",
       extra: "Redução de tempo em mesa e dominino total do molde F1",
-      images: ["../public/unhas5.jpeg", "../public/unhas6.jpeg"],
+      images: ["unhas5.jpeg", "unhas6.jpeg"],
     },
     {
       title: "Finalização de altíssimo padrão",
       text: "Acabamento fino com pouco lixamento",
       extra: "Estrutura fina e resistente",
-      images: ["../public/unhas7.jpeg", "../public/unhas8.jpeg"],
+      images: ["unhas7.jpeg", "unhas8.jpeg"],
     },
   ];
 
@@ -411,7 +411,7 @@ function App() {
           </div>
 
           <div className="image-container">
-            <img src="../public/ingrid.jpeg" alt="Instrutora" className="main-image" />
+            <img src="ingrid.jpeg" alt="Instrutora" className="main-image" />
             
           </div>
         </div>
@@ -432,7 +432,7 @@ function App() {
 
             <div className="bio-wrapper">
               <div className="bio-image-container"> 
-                <img src="../public/ingrid3.png" className="bio-main-img" alt="Ingrid Pena" /> 
+                <img src="ingrid3.png" className="bio-main-img" alt="Ingrid Pena" /> 
               </div>
 
               <div className="bio-text">
@@ -479,7 +479,7 @@ Depois de um ano e meio de estudos e testes, o Tudo no Molde F1 se tornou uma re
             <p style={{ textAlign: "center", marginBottom: "1rem" }}>Caso ainda tenha duvidas sobre o curso</p>
             <a href="https://wa.me/5519990152578" target="_blank" rel="noopener noreferrer">
               <button className="button final-button">
-                <img src="../public/zap.png" alt="" className="button-icon" aria-hidden="true" />
+                <img src="zap.png" alt="" className="button-icon" aria-hidden="true" />
                 Entre em contato agora
               </button>
             </a>
@@ -489,7 +489,7 @@ Depois de um ano e meio de estudos e testes, o Tudo no Molde F1 se tornou uma re
         {/* 🔒 GARANTIA - agora por último */}
         <FadeInOnScroll>
           <section className="guarantee">
-            <img src="../public/garantia.png" className="seal" alt="Garantia" />
+            <img src="garantia.png" className="seal" alt="Garantia" />
             <h2>Garantia incondicional de 7 dias</h2>
             <p>Se você não amar o conteúdo, devolvemos seu dinheiro sem perguntas.</p>
           </section>
