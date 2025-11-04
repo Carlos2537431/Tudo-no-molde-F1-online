@@ -689,6 +689,78 @@ body, html {
   }
 }
 
+/* Ajustes de responsividade adicionais para telas <= 768px */
+@media (max-width: 768px) {
+  /* Container da imagem do herói não deve ter largura fixa */
+  .image-container {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+  .main-image {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Centraliza e remove deslocamento lateral nas sections */
+  .section-container {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1.5rem 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* Botões um pouco menores e mais confortáveis no toque */
+  .button {
+    font-size: 1rem;
+    padding: 0.9rem 1.4rem;
+  }
+
+  /* Tipografia do preço ajustada para caber sem quebrar */
+  .price {
+    font-size: 2rem;
+    padding: 1rem 1.2rem;
+  }
+  .price span {
+    font-size: 3.6rem;
+  }
+  .price-old {
+    font-size: 1.2rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+/* Ajustes para telas muito pequenas (<= 480px) */
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2.2rem;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  .section-card {
+    padding: 1.5rem;
+  }
+  .testimonial-box {
+    padding: 1.5rem 1.25rem;
+  }
+  .button {
+    font-size: 0.95rem;
+    padding: 0.85rem 1.2rem;
+    white-space: normal; /* permite quebra de linha em telas muito pequenas */
+    text-align: center;
+  }
+  .price {
+    font-size: 1.6rem;
+    padding: 0.85rem 1rem;
+  }
+  .price span {
+    font-size: 2.8rem;
+  }
+}
+
 /* BOTÃO FLUTUANTE MOBILE */
 .floating-btn {
   display: none;
